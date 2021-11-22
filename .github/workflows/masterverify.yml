@@ -1,4 +1,4 @@
-name: Build
+name: master Build with maven
 on:
   push:
     branches:
