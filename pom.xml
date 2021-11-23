@@ -24,10 +24,10 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		
-  <sonar.organization>karimjesusgalvez</sonar.organization>
-  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-		
+
+  		<sonar.organization>karimjesusgalvez</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+
 		<java.version>17</java.version>
 		<maven.compiler.source>17</maven.compiler.source>
                 <maven.compiler.target>17</maven.compiler.target>
