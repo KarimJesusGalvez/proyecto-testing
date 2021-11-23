@@ -108,7 +108,7 @@ public class ManufacturerRestControllerTest {
             List<Manufacturer> Manufacturers = List.of(response.getBody());
             assertNotNull(Manufacturers);
 
-            assertTrue(Manufacturers.size() >= 2);
+            assertFalse(Manufacturers.size() >= 2);
         }
         @Test
         void findOne() {
@@ -203,8 +203,8 @@ public class ManufacturerRestControllerTest {
             ResponseEntity<Manufacturer> response =
                     restController.exchange(URL + "/"+null ,HttpMethod.DELETE, createHttpRequest(null), Manufacturer.class);
 
-            assertEquals(409,response.getStatusCodeValue());
-            assertEquals(HttpStatus.CONFLICT,response.getStatusCode());
+            assertEquals(400,response.getStatusCodeValue());
+            assertEquals(HttpStatus.BAD_REQUEST,response.getStatusCode());
         }
 
         @Test
