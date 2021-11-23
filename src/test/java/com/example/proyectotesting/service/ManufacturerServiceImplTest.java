@@ -437,7 +437,7 @@ public class ManufacturerServiceImplTest {
             when(manufacturerRepository.save(any(Manufacturer.class)))
                     .thenReturn(new Manufacturer());
             Manufacturer manufacturer = manufacturerService.save(new Manufacturer());
-            assertNull(manufacturer);
+            assertNotNull(manufacturer);
         }
     }
 }
