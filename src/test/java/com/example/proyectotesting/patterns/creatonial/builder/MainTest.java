@@ -1,4 +1,4 @@
-package com.example.proyectotesting.patterns.creatonial.builder;
+package com.example.proyectotesting.patterns.creational.builder;
 
 import com.example.proyectotesting.patterns.structural.adapter.Main;
 import org.junit.jupiter.api.BeforeEach;

@@ -1,4 +1,4 @@
-package com.example.proyectotesting.patterns.creatonial.factory;
+package com.example.proyectotesting.patterns.creational.factory;
 
 import com.example.proyectotesting.patterns.creational.factory.Empleado;
 import com.example.proyectotesting.patterns.creational.factory.EmpleadoFactory;
