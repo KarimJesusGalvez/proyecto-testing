@@ -43,6 +43,7 @@ public class ManufacturerRestControllerTest {
 
         this.manufacturerService = mock(ManufacturerService.class);
         this.manufacturerRestController = new ManufacturerRestController(manufacturerService);
+
     }
 
 
