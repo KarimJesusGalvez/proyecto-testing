@@ -1,7 +1,6 @@
 package com.example.proyectotesting.patterns.creational.factory;
 
 
-import com.example.proyectotesting.patterns.behavioral.iterator.Main;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

@@ -3,8 +3,6 @@ package com.example.proyectotesting.patterns.creational.builder;
 
 
 
-import com.example.proyectotesting.patterns.creational.builder.User;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -83,7 +81,11 @@ class UserTest {
     @Test
     void BuilderSetIdTest() {
         new User.Builder().setId(3L);
-        assertEquals(1L,usuario.getId());
+        assertEquals(1L, usuario.getId());
+    }
+    @Test
+    void BuilderGetIdTest() {
+        assertEquals(new User.Builder().getId(),null);
     }
     @Test
     void BuilderSetFirstNameTest() {
@@ -104,6 +106,12 @@ class UserTest {
         new User.Builder().setEmail("maria@hotmail.com");
         String email = new User.Builder().getEmail();
         assertEquals(null, email);
+    }
+    @Test
+    void BuilderSetMarriedTest() {
+        new User.Builder().setMarried(true);
+        Boolean married = new User.Builder().getMarried();
+        assertEquals(null, married);
     }
 
 

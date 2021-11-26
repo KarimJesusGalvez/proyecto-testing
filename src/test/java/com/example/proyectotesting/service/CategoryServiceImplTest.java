@@ -82,6 +82,14 @@ public class CategoryServiceImplTest {
         }
 
         @Test
+        @DisplayName("Returns empty optional if color is null")
+        void findNullColor() {
+
+            Optional<Category> found = categoryService.findOne((String) null);
+            assertFalse(found.isPresent());
+        }
+        @Test
+        @DisplayName("FindOne Id null")
         void findOneReturnNull() {
 
             when(categoryRepository.findById(null))
@@ -89,7 +97,6 @@ public class CategoryServiceImplTest {
 
             Optional<Category> found = categoryService.findOne((Long) null);
             assertFalse(found.isPresent());
-            assertTrue(true);
         }
 
         @Test
@@ -252,39 +259,61 @@ public class CategoryServiceImplTest {
         }
     }
 
+
     @Nested
     public class Delete {
         @Test
         void deleteNull() {
+
+            categoryRepository = mock(CategoryRepository.class);
+
             when(categoryRepository.findById(null))
                     .thenReturn(Optional.empty());
+            CategoryService categoryService = new CategoryServiceImpl(categoryRepository);
             assertFalse(categoryService.deleteById(null));
         }
 
         @Test
         void deleteNotContains() {
+            categoryRepository = mock(CategoryRepository.class);
+
             when(categoryRepository.findById(0L))
                     .thenReturn(Optional.empty());
+            CategoryService categoryService = new CategoryServiceImpl(categoryRepository);
 
             assertFalse(categoryService.deleteById(0L));
         }
 
-
         @Test
         void deleteAll() {
+            categoryRepository = mock(CategoryRepository.class);
 
             long reg_count = 2;
             when(categoryRepository.count()).thenReturn(reg_count);
-            assumeTrue(categoryService.count() > 0);
-            categoryService.deleteAll();
-            reg_count = 0;
+            CategoryService categoryService = new CategoryServiceImpl(categoryRepository);
+            reg_count = 1;
             when(categoryRepository.count()).thenReturn(reg_count);
+            doNothing().when(categoryRepository).deleteAll();
+            assumeTrue(categoryService.count() > 0);
+            assertTrue(categoryService.deleteAll());
+//            verify(categoryRepository.count());
 
-            assertEquals(0, categoryService.count());
+        }
+
+        @Test
+        void deleteAllError() {
+
+            categoryRepository = mock(CategoryRepository.class);
+            doThrow(new RuntimeException()).when(categoryRepository).deleteAll();
+            CategoryServiceImpl categoryService = new CategoryServiceImpl(categoryRepository);
+            assertTrue(!categoryService.deleteAll());
+            verify(categoryRepository).deleteAll();
         }
 
         @Test
         void deleteNegative() {
+            categoryRepository = mock(CategoryRepository.class);
+
             doThrow(RuntimeException.class).when(categoryRepository).deleteById(anyLong());
             boolean result = categoryService.deleteById(-9L);
             assertFalse(result);
@@ -294,13 +323,13 @@ public class CategoryServiceImplTest {
 
         @Test
         void deleteByIdOk() {
+            categoryRepository = mock(CategoryRepository.class);
+
             doThrow(RuntimeException.class).when(categoryRepository).deleteById(anyLong());
             boolean result = categoryService.deleteById(anyLong());
             assertFalse(result);
             assertThrows(Exception.class, () -> categoryRepository.deleteById(anyLong()));
             verify(categoryRepository).deleteById(anyLong());
         }
-
-
     }
 }
