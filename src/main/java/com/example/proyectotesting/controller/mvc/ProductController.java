@@ -25,7 +25,15 @@ public class ProductController {
 	
 	@Autowired
 	CategoryRepository categoryRepository;
-	
+
+	public ProductController(ProductRepository productRepository) {
+
+	}
+
+	public ProductController() {
+
+	}
+
 	@GetMapping
 	public String obtenerLista(Model model) {
 		// Recuperar productos de la base de datos utilizando repository
