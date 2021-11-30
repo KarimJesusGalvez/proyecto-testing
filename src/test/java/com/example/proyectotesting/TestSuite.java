@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 
 
 @RunWith(JUnitPlatform.class)
-@SelectPackages({"com.example.com.example.proyectotesting"})
+@SelectPackages({"com.example.proyectotesting"})
 @TestMethodOrder(value = MethodOrderer.MethodName.class)
 public class TestSuite {
 }
