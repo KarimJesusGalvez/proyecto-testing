@@ -27,6 +27,7 @@ public class ProductController {
 	CategoryRepository categoryRepository;
 
 	public ProductController(ProductRepository productRepository) {
+		this.repository = productRepository;
 
 	}
 
