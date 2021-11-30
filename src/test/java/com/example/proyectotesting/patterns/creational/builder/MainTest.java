@@ -11,7 +11,7 @@ class MainTest {
     @Test
     void main() {
         try{
-            com.example.proyectotesting.patterns.creational.builder.Main main = new Main();
+            Main main = new Main();
             main.main(new String[1]);
             assertTrue(true);
         }catch (Exception error){

@@ -3,7 +3,8 @@ package com.example.proyectotesting.patterns.structural.adapter;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 @DisplayName("Tractor Adapter Movable Tests")
 class TractorAdapterTest {

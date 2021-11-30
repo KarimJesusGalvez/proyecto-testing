@@ -1,9 +1,6 @@
 package com.example.proyectotesting;
 
-import com.example.proyectotesting.patterns.behavioral.mediator.Main;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class ProyectoTestingApplicationTest {
 

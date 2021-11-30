@@ -10,7 +10,7 @@ class MainTest {
     @BeforeEach
     void setUp() {
         try {
-            com.example.proyectotesting.patterns.creational.prototype.Main main = new Main();
+            Main main = new Main();
             main.main(new String[1]);
             assertTrue(true);
         }catch (Exception error){

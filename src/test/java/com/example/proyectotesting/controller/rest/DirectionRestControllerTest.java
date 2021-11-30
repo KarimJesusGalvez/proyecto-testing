@@ -2,7 +2,7 @@ package com.example.proyectotesting.controller.rest;
 
 import com.example.proyectotesting.entities.Direction;
 import com.example.proyectotesting.service.DirectionService;
-
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -12,9 +12,8 @@ import org.springframework.http.*;
 
 import java.util.List;
 
-import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @DisplayName("Direction REST Controller Tests")

@@ -3,7 +3,7 @@ package com.example.proyectotesting.patterns.behavioral.mediator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.mockito.Mockito.*;
 
 @DisplayName("User AbstractUser Tests")

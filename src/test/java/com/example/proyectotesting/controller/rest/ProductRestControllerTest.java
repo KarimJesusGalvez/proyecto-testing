@@ -4,7 +4,7 @@ import com.example.proyectotesting.entities.Manufacturer;
 import com.example.proyectotesting.entities.Product;
 import com.example.proyectotesting.repository.ProductRepository;
 import com.example.proyectotesting.service.ProductService;
-
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -14,7 +14,6 @@ import org.springframework.http.*;
 
 import java.util.List;
 
-import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
@@ -266,7 +265,7 @@ public class ProductRestControllerTest {
             assertEquals(HttpStatus.NOT_FOUND,response.getStatusCode());
         }
 
-        /*
+
         @Test
         @DisplayName("Deletes correctly")
         void deleteOKNoContentTest() {
@@ -280,7 +279,7 @@ public class ProductRestControllerTest {
             assertEquals(204,response.getStatusCodeValue());
             assertEquals(HttpStatus.NO_CONTENT,response.getStatusCode());
         }
-*/
+
         @Test
         @DisplayName("If delete fails returns 409 ")
         void deleteFail409Test() {
